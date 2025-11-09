@@ -221,7 +221,7 @@ bindsym $mod+p exec --no-startup-id ~/.power/power_mode.py && pkill -SIGRTMIN+11
 
 #bindsym $mod+Shift+s exec maim ~/picture-$(date +%Y-%m-%d_%H:%M:%S).png && notify-send maim_screenshot success
 bindsym $mod+Shift+s exec flameshot screen
-exec --no-startup-id xset s 300 300 #設定xss-lock的鎖屏時間(秒) 重新登入後生效
+exec --no-startup-id xset s 300 300 #設定xss-lock的鎖屏時間(秒) 重新登入後生效 預設是600 600
 #xset q可以查詢xset相關設定
 #第一個值設定 timeout (秒)
 #第二個值設定 interval (秒)（通常保持與 timeout 相同或更短）
@@ -253,3 +253,6 @@ hide_edge_borders smart
 exec --no-startup-id feh --bg-fill ~/圖片/Yorick_0.jpg
 exec --no-startup-id xset m 0/0 #滑鼠加速為0
 exec --no-startup-id unclutter -idle 5 -root -jitter 1 #設定滑鼠靜止 5 秒後隱藏游標 讓游標在任何視窗中都能被隱藏 容許滑鼠有 1 像素的輕微抖動而不計為移動（防止微小雜訊導致游標不斷閃爍）
+exec --no-startup-id dunst &
+#exec --no-startup-id xinput set-prop "Logitech USB Optical Mouse" "libinput Accel Profile Enabled" 0 -1
+exec --no-startup-id xfsettingsd
