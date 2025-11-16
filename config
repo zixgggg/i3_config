@@ -108,10 +108,10 @@ bindsym $mod+Tab layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-#bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-#bindsym $mod+space focus mode_toggle
+bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 #bindsym $mod+a focus parent
@@ -195,9 +195,9 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        status_command i3blocks
-}
+#bar {
+        #status_command i3blocks  
+#}
 
 set $alt Mod1
 #bindsym $mod+d exec rofi -show drun
@@ -221,23 +221,34 @@ bindsym $mod+p exec --no-startup-id ~/.power/power_mode.py && pkill -SIGRTMIN+11
 
 #bindsym $mod+Shift+s exec maim ~/picture-$(date +%Y-%m-%d_%H:%M:%S).png && notify-send maim_screenshot success
 bindsym $mod+Shift+s exec flameshot screen
-exec --no-startup-id xset s 300 300 #設定xss-lock的鎖屏時間(秒) 重新登入後生效 預設是600 600
+exec --no-startup-id xset s 300 300 #設定xss-lock的鎖屏時間(秒) 重新登入後生效
 #xset q可以查詢xset相關設定
 #第一個值設定 timeout (秒)
 #第二個值設定 interval (秒)（通常保持與 timeout 相同或更短）
 
 #gap
-#gaps inner 8
-#gaps outer 8
+gaps inner 8
+gaps outer 8
 
 #windows color
+
 # class                 border  backgr. text    indicator child_border
-client.focused          #808080 #808080 #ffffff #808080   #808080
+client.focused          #74a0a0 #74a0a0 #ffffff #74a0a0   #74a0a0
 client.focused_inactive #404040 #404040 #ffffff #404040   #404040
-client.unfocused        #333333 #333333 #888888 #333333   #333333
+client.unfocused        #778a80 #778a80 #888888 #778a80   #778a80
 client.urgent           #900000 #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #000000 #ffffff #000000   #000000
 client.background       #ffffff
+
+
+# class                 border  backgr. text    indicator child_border
+#client.focused          #808080 #808080 #ffffff #808080   #808080
+#client.focused_inactive #404040 #404040 #ffffff #404040   #404040
+#client.unfocused        #333333 #333333 #888888 #333333   #333333
+#client.urgent           #900000 #900000 #ffffff #900000   #900000
+#client.placeholder      #000000 #000000 #ffffff #000000   #000000
+#client.background       #ffffff
+
 #default
 # class                 border  backgr. text    indicator child_border
 #client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
@@ -248,10 +259,12 @@ client.background       #ffffff
 #client.background       #ffffff
 
 #default_border pixel 3
-workspace_layout tabbed
-hide_edge_borders smart
+#workspace_layout tabbed
+#hide_edge_borders smart
 exec --no-startup-id feh --bg-fill ~/圖片/Yorick_0.jpg
 exec --no-startup-id xset m 0/0 #滑鼠加速為0
 exec --no-startup-id unclutter -idle 5 -root -jitter 1 #設定滑鼠靜止 5 秒後隱藏游標 讓游標在任何視窗中都能被隱藏 容許滑鼠有 1 像素的輕微抖動而不計為移動（防止微小雜訊導致游標不斷閃爍）
 exec --no-startup-id dunst &
 exec --no-startup-id xfsettingsd
+#exec --no-startup-id ~/.config/polybar/launch.sh
+exec --no-startup-id polybar
