@@ -229,8 +229,11 @@ exec --no-startup-id xset s 300 300 #設定xss-lock的鎖屏時間(秒) 重新�
 #第二個值設定 interval (秒)（通常保持與 timeout 相同或更短）
 
 #gap
-gaps inner 8
+gaps inner 12
 gaps outer 8
+for_window [class="vlc"] gaps inner 0, gaps outer 0
+# 啟用智慧間隙
+smart_gaps on
 
 #windows color
 
