@@ -209,8 +209,13 @@ bindsym $alt+Tab exec rofi -show window
 
 #volume
 bindsym $mod+u exec pactl set-sink-volume @DEFAULT_SINK@ +1% && pkill -SIGRTMIN+10 i3blocks
+#bindsym $mod+u exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+
+
 bindsym $mod+y exec pactl set-sink-volume @DEFAULT_SINK@ -1% && pkill -SIGRTMIN+10 i3blocks
+#bindsym $mod+y exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%- 
+
 bindsym $mod+m exec pactl set-sink-mute @DEFAULT_SINK@ toggle && pkill -SIGRTMIN+10 i3blocks
+#bindsym $mod+m exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 
 bindsym $mod+l exec xset s activate
 
